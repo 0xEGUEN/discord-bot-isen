@@ -207,6 +207,9 @@ async def list_commands(ctx):
             description='Use `/command_name` for slash commands or `!command_name` for prefix commands',
             color=discord.Color.blurple()
         )
+        
+        # Add banner image
+        embed.set_image(url='attachment://banner.jpg')
         embed.set_thumbnail(url=bot.user.avatar.url if bot.user and bot.user.avatar else '')
         
         # UTILITY COMMANDS
@@ -238,6 +241,10 @@ async def list_commands(ctx):
             ('⏭️ `/skip`', 'Skip to the next song in queue'),
             ('📋 `/queue`', 'Show the music queue'),
             ('🎶 `/nowplaying`', 'See what\'s currently playing'),
+            ('🔂 `/loop <mode>`', 'Set loop mode: off, song, queue'),
+            ('🔀 `/shuffle`', 'Shuffle the current queue'),
+            ('💾 `/saveplaylist <name>`', 'Save current queue as playlist'),
+            ('📂 `/loadplaylist <name>`', 'Load a saved playlist'),
         ]
         for cmd, desc in music_cmds:
             embed.add_field(name=cmd, value=desc, inline=False)
@@ -255,6 +262,24 @@ async def list_commands(ctx):
         for cmd, desc in ai_cmds:
             embed.add_field(name=cmd, value=desc, inline=False)
         
+        # MODERATION COMMANDS (NEW!)
+        embed.add_field(
+            name='🛡️ Moderation Commands (Slash Commands)',
+            value='Server moderation and user management',
+            inline=False
+        )
+        mod_cmds = [
+            ('🚫 `/ban <user> <reason>`', 'Ban a user from server'),
+            ('👢 `/kick <user> <reason>`', 'Kick a user from server'),
+            ('⚠️ `/warn <user> <reason>`', 'Warn a user (3 = auto-kick)'),
+            ('🔇 `/mute <user> <duration>`', 'Mute user in voice (minutes)'),
+            ('🔊 `/unmute <user>`', 'Unmute a user'),
+            ('📋 `/warns <user>`', 'Check user warnings'),
+            ('✅ `/clearwarns <user>`', 'Clear user warnings (Admin)'),
+        ]
+        for cmd, desc in mod_cmds:
+            embed.add_field(name=cmd, value=desc, inline=False)
+        
         # ADMIN COMMANDS
         embed.add_field(
             name='⚙️ Admin Commands',
@@ -268,10 +293,17 @@ async def list_commands(ctx):
             embed.add_field(name=cmd, value=desc, inline=False)
         
         # FOOTER
-        embed.set_footer(text=f'Bot Version: 2.0 | Requested by {ctx.author}', icon_url=ctx.author.avatar.url if ctx.author.avatar else '')
+        embed.set_footer(text=f'Bot Version: 2.1 | Requested by {ctx.author}', icon_url=ctx.author.avatar.url if ctx.author.avatar else '')
         embed.timestamp = datetime.now()
         
-        await ctx.send(embed=embed)
+        # Send with banner image
+        try:
+            banner_file = discord.File('assets/banner.jpg', filename='banner.jpg')
+            await ctx.send(file=banner_file, embed=embed)
+        except FileNotFoundError:
+            logger.warning('[COMMANDS] Banner image not found, sending without image')
+            await ctx.send(embed=embed)
+            
         logger.info(f'[COMMANDS] Help menu displayed for {ctx.author}')
     except Exception as e:
         logger.error(f'[COMMANDS] Error: {e}')
