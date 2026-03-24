@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ bot_name }} - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 {{ bot_name }}</h1>
+            <p class="subtitle">Discord Bot Control Panel</p>
+        </header>
+
+        <div class="status-section">
+            <div class="status-card">
+                <span class="status-dot online"></span>
+                <span id="bot-status">Checking status...</span>
+            </div>
+        </div>
+
+        <section class="commands-section">
+            <h2>Available Commands</h2>
+            
+            <div class="command-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="utility">Utility</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+            </div>
+
+            <div class="commands-grid">
+                {% for command in commands %}
+                <div class="command-card" data-type="{{ command.type }}">
+                    <h3>{{ command.name }}</h3>
+                    <p>{{ command.description }}</p>
+                    <span class="command-type {{ command.type }}">{{ command.type }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Quick Start</h2>
+            <div class="info-box">
+                <h3>How to use slash commands:</h3>
+                <ol>
+                    <li>Open Discord and go to your server</li>
+                    <li>Type <code>/</code> to see available commands</li>
+                    <li>Click on a command to use it</li>
+                    <li>Fill in the parameters and press Enter</li>
+                </ol>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with ❤️ | Powered by discord.py & OpenAI</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

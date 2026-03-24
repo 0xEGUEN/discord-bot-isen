@@ -2,10 +2,15 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+# Initialize OpenAI client
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Create bot instance
 intents = discord.Intents.default()
@@ -40,6 +45,28 @@ async def info(ctx):
     embed.add_field(name='Bot ID', value=bot.user.id, inline=False)
     embed.add_field(name='Latency', value=f'{round(bot.latency * 1000)}ms', inline=False)
     await ctx.send(embed=embed)
+
+# Command: ask (AI Chat with GPT)
+@bot.command(name='ask', help='Ask AI - Usage: !ask <your question>')
+async def ask(ctx, *, question):
+    async with ctx.typing():
+        try:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "user", "content": question}
+                ],
+                max_tokens=500
+            )
+            answer = response.choices[0].message.content
+            # Split long responses into multiple messages if needed
+            if len(answer) > 2000:
+                for i in range(0, len(answer), 2000):
+                    await ctx.send(answer[i:i+2000])
+            else:
+                await ctx.send(answer)
+        except Exception as e:
+            await ctx.send(f"❌ Error: {str(e)}")
 
 # Command: help (override default help)
 @bot.command(name='commands', help='List all available commands')
