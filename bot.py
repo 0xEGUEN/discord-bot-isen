@@ -201,114 +201,144 @@ async def ask(ctx, *, question):
 async def list_commands(ctx):
     logger.info(f'[HELP] Command executed by {ctx.author}')
     try:
-        # Create main embed with bot information
-        embed = discord.Embed(
-            title='🤖 Bot Commands',
+        embeds = []
+        
+        # EMBED 1: MAIN + UTILITY + MUSIC
+        embed1 = discord.Embed(
+            title='🤖 Bot Commands (Page 1/3)',
             description='Use `/command_name` for slash commands or `!command_name` for prefix commands',
             color=discord.Color.blurple()
         )
         
-        # Add banner image
-        embed.set_image(url='attachment://banner.jpg')
-        embed.set_thumbnail(url=bot.user.avatar.url if bot.user and bot.user.avatar else '')
+        # Try to add banner image
+        try:
+            banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
+            if os.path.exists(banner_path):
+                embed1.set_image(url='attachment://banner.jpg')
+        except:
+            pass
+        
+        embed1.set_thumbnail(url=bot.user.avatar.url if bot.user and bot.user.avatar else '')
         
         # UTILITY COMMANDS
-        embed.add_field(
+        embed1.add_field(
             name='🛠️ Utility Commands',
             value='Basic bot utilities',
             inline=False
         )
         utility_cmds = [
-            ('🏓 `ping`', 'Check bot latency and response time'),
-            ('👋 `hello`', 'Get a friendly greeting from the bot'),
-            ('🔊 `echo <message>`', 'Repeat your message'),
-            ('ℹ️ `info`', 'Display bot information and stats'),
+            ('🏓 `ping`', 'Check bot latency'),
+            ('👋 `hello`', 'Greeting from bot'),
+            ('🔊 `echo <msg>`', 'Repeat your message'),
+            ('ℹ️ `info`', 'Bot information'),
         ]
         for cmd, desc in utility_cmds:
-            embed.add_field(name=cmd, value=desc, inline=False)
+            embed1.add_field(name=cmd, value=desc, inline=False)
         
-        # MUSIC COMMANDS
-        embed.add_field(
-            name='🎵 Music Commands (Slash Commands)',
-            value='YouTube music player - Use `/play`, `/pause`, etc.',
+        # MUSIC COMMANDS (Part 1)
+        embed1.add_field(
+            name='🎵 Music Commands - Part 1',
+            value='YouTube music player',
             inline=False
         )
-        music_cmds = [
-            ('▶️ `/play <query>`', 'Play music from YouTube search'),
-            ('⏸️ `/pause`', 'Pause the current song'),
-            ('▶️ `/resume`', 'Resume paused music'),
-            ('⏹️ `/stop`', 'Stop music and leave voice channel'),
-            ('⏭️ `/skip`', 'Skip to the next song in queue'),
-            ('📋 `/queue`', 'Show the music queue'),
-            ('🎶 `/nowplaying`', 'See what\'s currently playing'),
-            ('🔂 `/loop <mode>`', 'Set loop mode: off, song, queue'),
-            ('🔀 `/shuffle`', 'Shuffle the current queue'),
-            ('💾 `/saveplaylist <name>`', 'Save current queue as playlist'),
-            ('📂 `/loadplaylist <name>`', 'Load a saved playlist'),
+        music_cmds_1 = [
+            ('▶️ `/play <query>`', 'Play from YouTube'),
+            ('⏸️ `/pause`', 'Pause music'),
+            ('▶️ `/resume`', 'Resume music'),
+            ('⏹️ `/stop`', 'Stop & disconnect'),
+            ('⏭️ `/skip`', 'Skip song'),
         ]
-        for cmd, desc in music_cmds:
-            embed.add_field(name=cmd, value=desc, inline=False)
+        for cmd, desc in music_cmds_1:
+            embed1.add_field(name=cmd, value=desc, inline=False)
+        
+        embeds.append(embed1)
+        
+        # EMBED 2: MUSIC (part 2) + AI + MODERATION (part 1)
+        embed2 = discord.Embed(
+            title='🤖 Bot Commands (Page 2/3)',
+            color=discord.Color.blurple()
+        )
+        
+        # MUSIC COMMANDS (Part 2)
+        embed2.add_field(
+            name='🎵 Music Commands - Part 2',
+            value='More music features',
+            inline=False
+        )
+        music_cmds_2 = [
+            ('📋 `/queue`', 'Show queue'),
+            ('🎶 `/nowplaying`', 'Current song'),
+            ('🔂 `/loop`', 'Loop modes'),
+            ('🔀 `/shuffle`', 'Shuffle queue'),
+            ('💾 `/saveplaylist`', 'Save queue'),
+            ('📂 `/loadplaylist`', 'Load playlist'),
+        ]
+        for cmd, desc in music_cmds_2:
+            embed2.add_field(name=cmd, value=desc, inline=False)
+        
+        embeds.append(embed2)
+        
+        # EMBED 3: AI + MODERATION + ADMIN
+        embed3 = discord.Embed(
+            title='🤖 Bot Commands (Page 3/3)',
+            color=discord.Color.blurple()
+        )
         
         # AI COMMANDS
-        embed.add_field(
-            name='🤖 AI Commands (Slash Commands)',
-            value='Powered by Groq LLaMA 3.3 (70B)',
+        embed3.add_field(
+            name='🤖 AI Commands',
+            value='Powered by Groq LLaMA 3.3',
             inline=False
         )
         ai_cmds = [
-            ('💬 `/ask <question>`', 'Ask the AI any question'),
-            ('✨ `/imagine <prompt>`', 'Generate creative text with AI'),
+            ('💬 `/ask`', 'Ask a question'),
+            ('✨ `/imagine`', 'Create text'),
         ]
         for cmd, desc in ai_cmds:
-            embed.add_field(name=cmd, value=desc, inline=False)
+            embed3.add_field(name=cmd, value=desc, inline=False)
         
-        # MODERATION COMMANDS (NEW!)
-        embed.add_field(
-            name='🛡️ Moderation Commands (Slash Commands)',
-            value='Server moderation and user management',
+        # MODERATION COMMANDS
+        embed3.add_field(
+            name='🛡️ Moderation Commands',
+            value='Server moderation',
             inline=False
         )
         mod_cmds = [
-            ('🚫 `/ban <user> <reason>`', 'Ban a user from server'),
-            ('👢 `/kick <user> <reason>`', 'Kick a user from server'),
-            ('⚠️ `/warn <user> <reason>`', 'Warn a user (3 = auto-kick)'),
-            ('🔇 `/mute <user> <duration>`', 'Mute user in voice (minutes)'),
-            ('🔊 `/unmute <user>`', 'Unmute a user'),
-            ('📋 `/warns <user>`', 'Check user warnings'),
-            ('✅ `/clearwarns <user>`', 'Clear user warnings (Admin)'),
+            ('🚫 `/ban`', 'Ban user'),
+            ('👢 `/kick`', 'Kick user'),
+            ('⚠️ `/warn`', 'Warn user'),
+            ('🔇 `/mute`', 'Mute user'),
+            ('🔊 `/unmute`', 'Unmute user'),
+            ('📋 `/warns`', 'Check warns'),
+            ('✅ `/clearwarns`', 'Clear warns'),
         ]
         for cmd, desc in mod_cmds:
-            embed.add_field(name=cmd, value=desc, inline=False)
+            embed3.add_field(name=cmd, value=desc, inline=False)
         
         # ADMIN COMMANDS
-        embed.add_field(
-            name='⚙️ Admin Commands',
-            value='Server administration utilities',
+        embed3.add_field(
+            name='⚙️ Admin',
+            value='⚡ `sync` - Sync slash commands',
             inline=False
         )
-        admin_cmds = [
-            ('🔄 `sync`', 'Sync slash commands (Admin only)'),
-        ]
-        for cmd, desc in admin_cmds:
-            embed.add_field(name=cmd, value=desc, inline=False)
         
         # FOOTER
-        embed.set_footer(text=f'Bot Version: 2.1 | Requested by {ctx.author}', icon_url=ctx.author.avatar.url if ctx.author.avatar else '')
-        embed.timestamp = datetime.now()
+        embed3.set_footer(text=f'Bot v2.1 | Requested by {ctx.author}', icon_url=ctx.author.avatar.url if ctx.author.avatar else '')
+        embed3.timestamp = datetime.now()
         
-        # Send with banner image
+        embeds.append(embed3)
+        
+        # Send all embeds with banner file
         try:
-            # Use absolute path based on bot.py location
             banner_path = os.path.join(os.path.dirname(__file__), 'assets/banner.jpg')
             if os.path.exists(banner_path):
                 banner_file = discord.File(banner_path, filename='banner.jpg')
-                await ctx.send(file=banner_file, embed=embed)
+                await ctx.send(file=banner_file, embeds=embeds)
             else:
-                logger.warning(f'[HELP] Banner not found at {banner_path}, sending without image')
-                await ctx.send(embed=embed)
+                await ctx.send(embeds=embeds)
         except Exception as e:
-            logger.warning(f'[HELP] Error loading banner: {e}, sending without image')
-            await ctx.send(embed=embed)
+            logger.warning(f'[HELP] Error sending embeds: {e}')
+            await ctx.send(embeds=embeds)
             
         logger.info(f'[HELP] Help menu displayed for {ctx.author}')
     except Exception as e:

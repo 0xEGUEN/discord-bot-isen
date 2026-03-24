@@ -849,3 +849,70 @@ In embeds.0.fields: Must be 25 or fewer in length.
 2026-03-25 01:59:10,611 | [INFO    ] | DiscordBot | ============================================================
 2026-03-25 01:59:10,926 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
 2026-03-25 01:59:10,927 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:59:51,676 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:51,676 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-25 01:59:51,676 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:51,948 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-25 01:59:51,948 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-25 01:59:51,949 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:51,949 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-25 01:59:51,949 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:51,951 | [INFO    ] | discord.client | logging in using static token
+2026-03-25 01:59:52,670 | [INFO    ] | DiscordBot | [COGS] Loaded ai_commands.py
+2026-03-25 01:59:52,671 | [INFO    ] | DiscordBot | [COGS] Loaded moderation_commands.py
+2026-03-25 01:59:52,672 | [ERROR   ] | DiscordBot | [COGS] Failed to load music_commands.py: Extension 'cogs.music_commands' raised an error: ModuleNotFoundError: No module named 'yt_dlp'
+2026-03-25 01:59:52,675 | [INFO    ] | DiscordBot | [COGS] Loaded utility_commands.py
+2026-03-25 01:59:52,675 | [INFO    ] | DiscordBot | [COGS] Loaded 3 cog(s), 1 failed
+2026-03-25 01:59:53,479 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: ebb80cc91702ccaa7245067d83dc9e68).
+2026-03-25 01:59:55,486 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:55,486 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-25 01:59:55,487 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-25 01:59:55,487 | [INFO    ] | DiscordBot | [READY] Latency: 267ms
+2026-03-25 01:59:55,487 | [INFO    ] | DiscordBot | ============================================================
+2026-03-25 01:59:55,487 | [INFO    ] | DiscordBot | [STATUS] Bot status set to: Streaming "build with love"
+2026-03-25 01:59:55,891 | [INFO    ] | DiscordBot | [SYNC] Synced 13 command(s)
+2026-03-25 02:00:02,817 | [INFO    ] | DiscordBot | [HELP] Command executed by .eguen
+2026-03-25 02:00:03,302 | [WARNING ] | DiscordBot | [HELP] Error loading banner: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.fields: Must be 25 or fewer in length., sending without image
+2026-03-25 02:00:03,725 | [ERROR   ] | DiscordBot | [HELP] Error: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.fields: Must be 25 or fewer in length.
+2026-03-25 02:00:10,016 | [INFO    ] | DiscordBot | [PING] Command executed by .eguen
+2026-03-25 02:00:10,021 | [INFO    ] | DiscordBot | [PING] Command executed by .eguen
+2026-03-25 02:00:10,419 | [INFO    ] | DiscordBot | [PING] Completed in 398ms
+2026-03-25 02:00:10,513 | [INFO    ] | DiscordBot | [PING] Completed in 497ms
+2026-03-25 02:00:25,645 | [INFO    ] | DiscordBot | [COMMANDS] Command executed by .eguen
+2026-03-25 02:00:25,648 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 02:00:25,648 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:00:26,356 | [INFO    ] | DiscordBot | [COMMANDS] Listed 8 commands
+2026-03-25 02:00:43,952 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "echo": MissingRequiredArgument
+2026-03-25 02:00:43,952 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:00:43,955 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "echo": MissingRequiredArgument
+2026-03-25 02:00:43,955 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:00:52,858 | [INFO    ] | DiscordBot | [ECHO] Command executed by .eguen
+2026-03-25 02:00:52,858 | [INFO    ] | DiscordBot | [ECHO] Message: hai
+2026-03-25 02:00:52,866 | [INFO    ] | DiscordBot | [ECHO] Command executed by .eguen
+2026-03-25 02:00:52,866 | [INFO    ] | DiscordBot | [ECHO] Message: hai
+2026-03-25 02:00:53,344 | [INFO    ] | DiscordBot | [ECHO] Completed successfully
+2026-03-25 02:00:53,374 | [INFO    ] | DiscordBot | [ECHO] Completed successfully
+2026-03-25 02:00:58,355 | [INFO    ] | DiscordBot | [HELP] Command executed by .eguen
+2026-03-25 02:00:58,798 | [WARNING ] | DiscordBot | [HELP] Error loading banner: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.fields: Must be 25 or fewer in length., sending without image
+2026-03-25 02:00:59,138 | [ERROR   ] | DiscordBot | [HELP] Error: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.0.fields: Must be 25 or fewer in length.
+2026-03-25 02:01:07,832 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 02:01:07,832 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:01:07,832 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:01:11,624 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 02:01:11,625 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:01:11,627 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-25 02:01:11,627 | [ERROR   ] | DiscordBot | [ERROR] User: .eguen | Channel: general
+2026-03-25 02:01:43,022 | [ERROR   ] | discord.app_commands.tree | Ignoring exception in command tree
+Traceback (most recent call last):
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1089, in wrapper
+    await self._call(interaction)
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1221, in _call
+    command, options = self._get_app_command_options(data)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "D:\coding\discord bot tapi versi gwe\.venv\Lib\site-packages\discord\app_commands\tree.py", line 1125, in _get_app_command_options
+    raise CommandNotFound(name, parents)
+discord.app_commands.errors.CommandNotFound: Application command 'clearwarns' not found
