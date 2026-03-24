@@ -25,7 +25,7 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger('DiscordBot')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)  # Enable logging
 
 # Load environment variables
 load_dotenv()
@@ -53,8 +53,11 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     logger.info('=' * 60)
-    logger.info(f'[READY] {bot.user} has connected to Discord!')
-    logger.info(f'[READY] Bot ID: {bot.user.id}')
+    if bot.user:
+        logger.info(f'[READY] {bot.user} has connected to Discord!')
+        logger.info(f'[READY] Bot ID: {bot.user.id}')
+    else:
+        logger.warning('[READY] bot.user is None')
     logger.info(f'[READY] Latency: {round(bot.latency * 1000)}ms')
     logger.info('=' * 60)
     
@@ -107,8 +110,11 @@ async def info(ctx):
     try:
         embed = discord.Embed(title='Bot Info', color=discord.Color.blue())
 
-        embed.add_field(name='Bot Name', value=bot.user.name, inline=False)
-        embed.add_field(name='Bot ID', value=bot.user.id, inline=False)
+        if bot.user:
+            embed.add_field(name='Bot Name', value=bot.user.name, inline=False)
+            embed.add_field(name='Bot ID', value=bot.user.id, inline=False)
+        else:
+            embed.add_field(name='Bot Status', value='Not ready yet', inline=False)
         embed.add_field(name='Latency', value=f'{round(bot.latency * 1000)}ms', inline=False)
         embed.add_field(name='Status', value='O Online', inline=False)
         await ctx.send(embed=embed)
@@ -134,13 +140,19 @@ async def ask(ctx, *, question):
         try:
             logger.debug('[ASK] Calling Groq API...')
             response = client.chat.completions.create(
-                model="mixtral-8x7b-32768",
+                model="llama-3.3-70b-versatile",
                 messages=[
                     {"role": "user", "content": question}
                 ],
                 max_tokens=500
             )
             answer = response.choices[0].message.content
+            
+            # Handle None response
+            if not answer:
+                await ctx.send("❌ Empty response from AI")
+                return
+            
             logger.info(f'[ASK] Got response ({len(answer)} chars)')
             
             # Split long responses into multiple messages if needed
@@ -187,12 +199,26 @@ async def sync(ctx):
         logger.debug(traceback.format_exc())
         await ctx.send(f'[ERROR] Failed to sync: {str(e)}')
 
+# Load cogs
+async def load_cogs():
+    for filename in os.listdir('./cogs'):
+        if filename.endswith('.py'):
+            await bot.load_extension(f'cogs.{filename[:-3]}')
+            print(f'✓ Loaded cog: {filename}')
+
+@bot.event
+async def setup_hook():
+    await load_cogs()
+
 # Run the bot
 if __name__ == '__main__':
     try:
         logger.info('=' * 60)
         logger.info('[RUN] BOT STARTING...')
         logger.info('=' * 60)
+        if not TOKEN:
+            logger.error('[RUN] DISCORD_TOKEN not set in .env file')
+            exit(1)
         bot.run(TOKEN)
     except KeyboardInterrupt:
         logger.warning('[SHUTDOWN] Bot interrupted by user (Ctrl+C)')

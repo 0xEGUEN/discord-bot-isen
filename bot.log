@@ -620,3 +620,144 @@ openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded you
     raise self._make_status_error_from_response(err.response) from None
 openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
 
+2026-03-24 22:28:31,438 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:31,438 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:28:31,438 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:31,747 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:28:31,747 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:28:31,748 | [WARNING ] | discord.client | davey is not installed, voice will NOT be supported
+2026-03-24 22:28:31,748 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:31,748 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:28:31,749 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:31,750 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:28:33,381 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 9d69c138838a1d6d964ab1fb4acbad70).
+2026-03-24 22:28:35,438 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:35,438 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:28:35,438 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:28:35,438 | [INFO    ] | DiscordBot | [READY] Latency: 288ms
+2026-03-24 22:28:35,438 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:28:35,776 | [INFO    ] | DiscordBot | [SYNC] Synced 0 command(s)
+2026-03-24 22:31:21,803 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:21,804 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:31:21,804 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:22,056 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:31:22,057 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:31:22,058 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:22,058 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:31:22,058 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:22,059 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:31:23,903 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 82675087e1f6eaaffa7af753ad36c065).
+2026-03-24 22:31:25,907 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:25,907 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:31:25,907 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:31:25,908 | [INFO    ] | DiscordBot | [READY] Latency: 285ms
+2026-03-24 22:31:25,908 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:31:26,284 | [INFO    ] | DiscordBot | [SYNC] Synced 0 command(s)
+2026-03-24 22:32:01,477 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:32:01,478 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:32:01,478 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:05,828 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:05,828 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:37:05,828 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:06,103 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:37:06,104 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:37:06,105 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:06,105 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:37:06,105 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:06,106 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:37:07,641 | [ERROR   ] | DiscordBot | [FATAL] ExtensionFailed: Extension 'cogs.ai_commands' raised an error: OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+2026-03-24 22:37:07,645 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:07,645 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:37:07,645 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:53,333 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:53,333 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:37:53,333 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:53,614 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:37:53,614 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:37:53,615 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:53,615 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:37:53,616 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:53,617 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:37:55,748 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 02eafb9193b44ddd206d4a4bcc224d15).
+2026-03-24 22:37:57,806 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:57,806 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:37:57,806 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:37:57,806 | [INFO    ] | DiscordBot | [READY] Latency: 293ms
+2026-03-24 22:37:57,806 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:37:58,675 | [INFO    ] | DiscordBot | [SYNC] Synced 6 command(s)
+2026-03-24 22:38:15,567 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "ask": MissingRequiredArgument
+2026-03-24 22:38:15,568 | [ERROR   ] | DiscordBot | [ERROR] User: hnkwjp | Channel: general
+2026-03-24 22:38:20,449 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:38:20,450 | [INFO    ] | DiscordBot | [ASK] Question: halo
+2026-03-24 22:38:21,059 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-24 22:38:21,059 | [ERROR   ] | DiscordBot | [ASK] Error: BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-24 22:39:13,314 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:39:13,314 | [INFO    ] | DiscordBot | [ASK] Question: halo
+2026-03-24 22:39:13,984 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-24 22:39:13,985 | [ERROR   ] | DiscordBot | [ASK] Error: BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-24 22:39:26,908 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "None": CommandNotFound
+2026-03-24 22:39:26,908 | [ERROR   ] | DiscordBot | [ERROR] User: hnkwjp | Channel: general
+2026-03-24 22:39:32,284 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "ask": MissingRequiredArgument
+2026-03-24 22:39:32,284 | [ERROR   ] | DiscordBot | [ERROR] User: hnkwjp | Channel: general
+2026-03-24 22:39:37,720 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:39:37,721 | [INFO    ] | DiscordBot | [ASK] Question: halo
+2026-03-24 22:39:38,308 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-24 22:39:38,309 | [ERROR   ] | DiscordBot | [ASK] Error: BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-24 22:39:47,795 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:39:47,796 | [INFO    ] | DiscordBot | [ASK] Question: halo test
+2026-03-24 22:39:48,353 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-24 22:39:48,354 | [ERROR   ] | DiscordBot | [ASK] Error: BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-24 22:41:20,951 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:20,951 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:41:20,951 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:40,175 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:40,176 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:41:40,176 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:40,422 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:41:40,422 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:41:40,423 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:40,423 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:41:40,423 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:40,424 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:41:42,855 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: aa962535bdfc42c0a7b6c22f2c1f2c7b).
+2026-03-24 22:41:44,894 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:44,894 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:41:44,894 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:41:44,895 | [INFO    ] | DiscordBot | [READY] Latency: 295ms
+2026-03-24 22:41:44,895 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:41:45,348 | [INFO    ] | DiscordBot | [SYNC] Synced 6 command(s)
+2026-03-24 22:41:50,996 | [ERROR   ] | DiscordBot | [ERROR] Command Error in "ask": MissingRequiredArgument
+2026-03-24 22:41:50,996 | [ERROR   ] | DiscordBot | [ERROR] User: hnkwjp | Channel: general
+2026-03-24 22:41:55,546 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:41:55,546 | [INFO    ] | DiscordBot | [ASK] Question: halo
+2026-03-24 22:41:56,214 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-03-24 22:41:56,215 | [ERROR   ] | DiscordBot | [ASK] Error: BadRequestError: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-03-24 22:42:39,345 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:39,345 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:42:39,346 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:52,628 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:52,628 | [INFO    ] | DiscordBot | [BOT] DISCORD BOT STARTING UP
+2026-03-24 22:42:52,628 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:52,894 | [INFO    ] | DiscordBot | [INIT] Groq client initialized
+2026-03-24 22:42:52,895 | [WARNING ] | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-03-24 22:42:52,896 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:52,896 | [INFO    ] | DiscordBot | [RUN] BOT STARTING...
+2026-03-24 22:42:52,896 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:52,898 | [INFO    ] | discord.client | logging in using static token
+2026-03-24 22:42:54,818 | [INFO    ] | discord.gateway | Shard ID None has connected to Gateway (Session ID: 6ed1054c13ce5b1cd25f555239cfdb25).
+2026-03-24 22:42:56,857 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:56,857 | [INFO    ] | DiscordBot | [READY] ChatGPT AI#9437 has connected to Discord!
+2026-03-24 22:42:56,857 | [INFO    ] | DiscordBot | [READY] Bot ID: 1113004068613390336
+2026-03-24 22:42:56,857 | [INFO    ] | DiscordBot | [READY] Latency: 253ms
+2026-03-24 22:42:56,858 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:42:57,338 | [INFO    ] | DiscordBot | [SYNC] Synced 6 command(s)
+2026-03-24 22:43:04,971 | [INFO    ] | DiscordBot | [ASK] Command executed by hnkwjp
+2026-03-24 22:43:04,971 | [INFO    ] | DiscordBot | [ASK] Question: halo
+2026-03-24 22:43:06,209 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 22:43:06,218 | [INFO    ] | DiscordBot | [ASK] Got response (94 chars)
+2026-03-24 22:43:06,629 | [INFO    ] | DiscordBot | [ASK] Completed successfully in 1331ms
+2026-03-24 22:43:26,166 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 22:45:25,807 | [INFO    ] | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | ============================================================
+2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | [SHUTDOWN] BOT SHUTDOWN COMPLETE
+2026-03-24 22:46:19,157 | [INFO    ] | DiscordBot | ============================================================

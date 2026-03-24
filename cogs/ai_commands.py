@@ -2,28 +2,33 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 import os
-from openai import OpenAI
+from groq import Groq
 
 class AICommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+        self.groq_client = Groq(api_key=os.getenv('GROQ_API_KEY'))
 
     @app_commands.command(name="ask", description="Ask AI a question")
     @app_commands.describe(question="Your question for the AI")
     async def ask(self, interaction: discord.Interaction, question: str):
-        """Chat with GPT-3.5"""
+        """Chat with Groq AI"""
         await interaction.response.defer()
         
         try:
-            response = self.openai_client.chat.completions.create(
-                model="gpt-3.5-turbo",
+            response = self.groq_client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
                 messages=[
                     {"role": "user", "content": question}
                 ],
                 max_tokens=500
             )
             answer = response.choices[0].message.content
+            
+            # Handle None response
+            if not answer:
+                await interaction.followup.send(f"❌ Empty response from AI")
+                return
             
             # Split long responses into multiple messages if needed
             if len(answer) > 2000:
@@ -41,14 +46,19 @@ class AICommands(commands.Cog):
         await interaction.response.defer()
         
         try:
-            response = self.openai_client.chat.completions.create(
-                model="gpt-3.5-turbo",
+            response = self.groq_client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
                 messages=[
                     {"role": "user", "content": f"Create something creative based on this: {prompt}"}
                 ],
                 max_tokens=500
             )
             result = response.choices[0].message.content
+            
+            # Handle None response
+            if not result:
+                await interaction.followup.send(f"❌ Empty response from AI")
+                return
             
             if len(result) > 2000:
                 for i in range(0, len(result), 2000):

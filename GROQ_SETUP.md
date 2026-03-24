@@ -30,14 +30,14 @@ Replace `gsk_xxxxxxxxxxxxx` dengan key dari Groq.
 
 ## 📝 Model yang Tersedia:
 
-**Default kami pakai:** `mixtral-8x7b-32768` (sangat cepat & bagus)
+**Default kami pakai:** `llama-3.3-70b-versatile` (sangat cepat & bagus)
 
 Model lain yang Available:
-- `mixtral-8x7b-32768` - Balanced, cepat
+- `llama-3.3-70b-versatile` - Balanced, cepat
 - `llama2-70b-4096` - Powerful, lebih lambat  
 - `gemma-7b-it` - Ringan, cepat
 
-Untuk ganti model, edit `bot.py` → cari `model="mixtral-8x7b-32768"` → ubah.
+Untuk ganti model, edit `bot.py` → cari `model="llama-3.3-70b-versatile"` → ubah.
 
 ---
 
