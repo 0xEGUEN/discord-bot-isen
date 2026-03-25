@@ -1,6 +1,6 @@
 # Environment variables
 .env
-
+.wakatime.cfg
 # Python
 __pycache__/
 *.py[cod]
